@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Wedding Of Rafayel & Nayla</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#111111;
+color:#F5EFE6;
+font-family:'Montserrat',sans-serif;
+overflow-x:hidden;
+}
+
+section{
+padding:70px 24px;
+position:relative;
+overflow:hidden;
+}
+
+.container{
+max-width:480px;
+margin:auto;
+}
+
+.bg-glow{
+position:absolute;
+width:300px;
+height:300px;
+border-radius:50%;
+background:rgba(200,169,107,0.06);
+filter:blur(80px);
+z-index:0;
+}
+
+.glow1{
+top:-120px;
+left:-120px;
+}
+
+.glow2{
+bottom:-120px;
+right:-120px;
+}
+
+.content{
+position:relative;
+z-index:2;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:600;
+letter-spacing:1px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.7)),
+radial-gradient(circle at top, #0F3D3E 0%, #111111 70%);
+}
+
+.hero .mini{
+font-size:13px;
+letter-spacing:5px;
+text-transform:uppercase;
+color:#C8A96B;
+margin-bottom:18px;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:54px;
+line-height:0.95;
+margin-bottom:14px;
+animation:fadeUp 1.2s ease;
+}
+
+.hero .and{
+font-size:22px;
+color:#C8A96B;
+margin:8px 0;
+}
+
+.hero .date{
+font-size:16px;
+letter-spacing:4px;
+margin-top:16px;
+color:#ddd;
+animation:fadeUp 1.4s ease;
+}
+
+.divider{
+width:70px;
+height:1px;
+background:#C8A96B;
+margin:20px auto;
+opacity:.7;
+}
+
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(200,169,107,0.15);
+padding:28px 22px;
+border-radius:26px;
+backdrop-filter:blur(10px);
+margin-top:20px;
+}
+
+.text-center{
+text-align:center;
+}
+
+.subtitle{
+font-size:12px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#C8A96B;
+margin-bottom:14px;
+}
+
+.desc{
+font-size:14px;
+line-height:1.9;
+color:#ddd;
+}
+
+.quote{
+font-style:italic;
+font-size:15px;
+line-height:1.9;
+color:#e7dccb;
+}
+
+.name{
+font-size:38px;
+margin-bottom:8px;
+line-height:1;
+}
+
+.parent{
+font-size:13px;
+line-height:1.8;
+color:#d3d3d3;
+}
+
+.with{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+margin:28px 0;
+color:#C8A96B;
+}
+
+.event{
+margin-top:18px;
+padding:22px;
+border-radius:22px;
+background:#0F3D3E;
+border:1px solid rgba(200,169,107,.25);
+}
+
+.event h3{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.event p{
+font-size:14px;
+line-height:1.8;
+color:#eee;
+}
+
+.button-wrap{
+margin-top:34px;
+display:flex;
+justify-content:center;
+}
+
+.wa-btn{
+text-decoration:none;
+padding:16px 34px;
+border-radius:999px;
+background:#C8A96B;
+color:#111;
+font-weight:600;
+font-size:14px;
+transition:.3s;
+box-shadow:0 0 25px rgba(200,169,107,.25);
+}
+
+.wa-btn:hover{
+transform:translateY(-2px) scale(1.02);
+}
+
+.closing{
+padding-bottom:100px;
+}
+
+.footer{
+background:#000;
+padding:20px 16px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer p{
+font-size:11px;
+color:#fff;
+font-family:'Montserrat',sans-serif;
+font-weight:600;
+letter-spacing:.5px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:16px;
+margin-top:10px;
+}
+
+.socials a{
+width:34px;
+height:34px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#111;
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+
+.socials a:hover{
+transform:translateY(-2px);
+border-color:#C8A96B;
+}
+
+.socials svg{
+width:16px;
+height:16px;
+fill:#fff;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:480px){
+
+.hero h1{
+font-size:44px;
+}
+
+.name{
+font-size:32px;
+}
+
+section{
+padding:60px 18px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="bg-glow glow1"></div>
+<div class="bg-glow glow2"></div>
+
+<div class="container content">
+
+<div class="mini">The Wedding Of</div>
+
+<h1>
+Rafayel<br>
+<span class="and">&</span><br>
+Nayla
+</h1>
+
+<div class="divider"></div>
+
+<div class="date">12 • 12 • 2026</div>
+
+</div>
+</section>
+
+<section>
+<div class="container content fade">
+
+<div class="text-center subtitle">Assalamu'alaikum</div>
+
+<div class="card text-center">
+<p class="desc">
+Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container content fade">
+
+<div class="text-center subtitle">Quran Verse</div>
+
+<div class="card text-center">
+<p class="quote">
+“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
+</p>
+
+<div style="margin-top:16px;color:#C8A96B;font-size:13px;letter-spacing:2px;">
+QS. Ar-Rum : 21
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container content fade">
+
+<div class="text-center subtitle">Bride & Groom</div>
+
+<div class="card text-center">
+
+<div class="name">Rafayel Alfatih</div>
+
+<div class="parent">
+Putra dari<br>
+Bapak H. Fadhil Ramadhan & Ibu Hj. Naura Safitri
+</div>
+
+<div class="with">&</div>
+
+<div class="name">Nayla Aqeela</div>
+
+<div class="parent">
+Putri dari<br>
+Bapak H. Rizqan Maulana & Ibu Hj. Aisyah Humaira
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container content fade">
+
+<div class="text-center subtitle">Wedding Event</div>
+
+<div class="event text-center">
+<h3>Akad</h3>
+
+<p>
+Sabtu, 12 Desember 2026<br>
+08.00 WIB — Selesai<br><br>
+
+Masjid Nurul Jannah<br>
+Jl. Anggrek Raya No. 18
+</p>
+</div>
+
+<div class="event text-center">
+<h3>Reception</h3>
+
+<p>
+Sabtu, 12 Desember 2026<br>
+11.00 WIB — Selesai<br><br>
+
+Aula Alana Convention Hall<br>
+Jl. Mahakam Indah No. 27
+</p>
+</div>
+
+<div class="button-wrap">
+<a class="wa-btn"
+href="https://wa.me/6289512924881?text=Assalamualaikum%2C%20hai%20kak%20Avfour!%20Nanti%20aku%20bisa%20hadir%20kok%20diacara%20pernikahan%20kamu..%20Happy%20Wedding%20yaa..."
+target="_blank">
+WhatsApp
+</a>
+</div>
+
+</div>
+</section>
+
+<section class="closing">
+<div class="container content fade">
+
+<div class="card text-center">
+
+<p class="desc">
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.
+</p>
+
+<div style="margin-top:22px;font-size:14px;color:#ddd;">
+Wassalamu’alaikum Wr. Wb.
+</div>
+
+<div style="margin-top:28px;">
+<h2 style="font-size:38px;">
+Rafayel & Nayla
+</h2>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+
+<p>Crafted With Love — Avfour</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/aiiistheticsv4?igsh=MWlrbDg3NDh0d245NA==" target="_blank">
+
+<svg viewBox="0 0 24 24">
+<path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm10.5 1a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+</svg>
+
+</a>
+
+<a href="https://tiktok.com/@aiiistheticsv4" target="_blank">
+
+<svg viewBox="0 0 24 24">
+<path d="M16.5 2c.3 2.2 1.6 4 3.5 5v3c-1.3 0-2.5-.3-3.5-.9V16a6 6 0 11-6-6c.3 0 .7 0 1 .1v3.1a3 3 0 10 2 2.8V2h3z"/>
+</svg>
+
+</a>
+
+<a href="https://wa.me/6289512924881" target="_blank">
+
+<svg viewBox="0 0 24 24">
+<path d="M20 3.9A10 10 0 003.5 17.3L2 22l4.8-1.4A10 10 0 1020 3.9zm-8 16.3a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.5.7c-.1.2-.3.2-.5.1-1.2-.6-2.2-1.5-3-2.7-.2-.2 0-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6-.1-.2-.6-1.4-.8-1.8-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.8-.9 1.9s.9 2.2 1 2.4c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.5 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/>
+</svg>
+
+</a>
+
+</div>
+
+</footer>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{
+threshold:0.15
+});
+
+fades.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
